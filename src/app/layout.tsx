@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { notoSans, roboto, raleway } from "@/app/ui/fonts";
-import Loading from "@/app/ui/Loading";
+import Loading from "@/app/ui/loading";
 // import "@/app/ui/globals.css";
 import "../../public/css/style.css";
 import clsx from "clsx";
-import Header from "@/app/ui/Header";
-import Footer from "@/app/ui/Footer";
+import Header from "@/app/ui/header";
+import Footer from "@/app/ui/footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",

@@ -1,5 +1,5 @@
 import React from "react";
-import { SubHeader } from "@/app/ui/SubHeader";
+import SubHeader from "@/app/ui/sub-header";
 
 export default function Page() {
   return (

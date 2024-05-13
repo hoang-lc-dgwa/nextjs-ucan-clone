@@ -1,8 +1,8 @@
 import React from "react";
-import Sidebar from "@/app/ui/Sidebar";
+import Sidebar from "@/app/ui/sidebar";
 import Image from "next/image";
 import Link from "next/link";
-import { SubHeader, SubHeader2 } from "@/app/ui/SubHeader";
+import SubHeader, { SubHeader2 } from "@/app/ui/sub-header";
 
 export default function Page() {
   return (

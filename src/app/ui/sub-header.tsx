@@ -5,7 +5,7 @@ interface SubHeaderProps {
   pText: string;
 }
 
-export const SubHeader: React.FC<SubHeaderProps> = ({ h1Text, pText }) => {
+const SubHeader: React.FC<SubHeaderProps> = ({ h1Text, pText }) => {
   return (
     <div className="sub-header">
       <div className="inner">
@@ -21,6 +21,8 @@ export const SubHeader: React.FC<SubHeaderProps> = ({ h1Text, pText }) => {
     </div>
   );
 };
+
+export default SubHeader;
 
 export const SubHeader2: React.FC<SubHeaderProps> = ({ h1Text, pText }) => {
   return (
