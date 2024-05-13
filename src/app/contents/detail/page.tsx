@@ -1,4 +1,4 @@
-import Sidebar from "@/app/ui/Sidebar";
+import Sidebar from "@/app/ui/sidebar";
 import Image from "next/image";
 import React from "react";
 
