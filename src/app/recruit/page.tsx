@@ -1,6 +1,11 @@
 import React from "react";
-import RecruitInfo from "@/app/ui/recruit-info";
 import SubHeader from "@/app/ui/sub-header";
+import RecruitInfo from "@/app/ui/recruit-info";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "RECRUIT",
+};
 
 export default function Page() {
   return (

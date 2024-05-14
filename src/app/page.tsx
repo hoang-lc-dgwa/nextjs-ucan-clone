@@ -1,14 +1,10 @@
 import Image from "next/image";
-import { roboto, raleway } from "@/app/ui/fonts";
 import Link from "next/link";
 import Sidebar from "@/app/ui/sidebar";
 
 export default function Home() {
   return (
     <>
-      {/* <p className={roboto.className}>Roboto</p> */}
-      {/* <p className={raleway.className}>Raleway</p> */}
-
       <div className="t-kv js-fade">
         <div className="t-kv__inner">
           <div className="t-kv__bg">

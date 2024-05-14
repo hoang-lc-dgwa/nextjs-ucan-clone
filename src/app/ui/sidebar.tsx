@@ -1,7 +1,69 @@
-import Image from "next/image";
-import React from "react";
+"use client";
 
-const Sidebar = () => {
+import React, { FC, useEffect, useRef } from "react";
+import InputSearch from "@/app/ui/input-search";
+
+const Sidebar: FC = () => {
+  const accordionsRef = useRef<NodeListOf<Element> | null>(null);
+
+  const toggleAccordion = (
+    content: HTMLElement,
+    btn: HTMLElement,
+    btnTxt: HTMLElement
+  ) => {
+    const isOpen = content.style.maxHeight !== "39rem";
+    console.log("click1");
+    if (!isOpen) {
+      content.style.maxHeight = `${content.scrollHeight}px`;
+      content.classList.add("is-open");
+      btn.classList.add("is-open");
+      btnTxt.textContent = "- 閉じる";
+    } else {
+      content.style.maxHeight = "39rem";
+      content.classList.remove("is-open");
+      btn.classList.remove("is-open");
+      btnTxt.textContent = "+ もっと見る";
+    }
+  };
+
+  useEffect(() => {
+    const accordions = document.querySelectorAll(".contents-sidebar");
+    accordionsRef.current = accordions;
+
+    accordions.forEach((accordion) => {
+      const btn = accordion.querySelector(".keyword-more") as HTMLElement;
+      const btnTxt = accordion.querySelector(
+        ".keyword-more__txt"
+      ) as HTMLElement;
+      const content = accordion.querySelector(
+        ".contents-sidebar__inner"
+      ) as HTMLElement;
+
+      const handleClick = () => toggleAccordion(content, btn, btnTxt);
+
+      btn?.addEventListener("click", handleClick);
+
+      return () => {
+        btn?.removeEventListener("click", handleClick);
+      };
+    });
+
+    return () => {
+      accordionsRef.current?.forEach((accordion) => {
+        const btn = accordion.querySelector(".keyword-more") as HTMLElement;
+        const btnTxt = accordion.querySelector(
+          ".keyword-more__txt"
+        ) as HTMLElement;
+        const content = accordion.querySelector(
+          ".contents-sidebar__inner"
+        ) as HTMLElement;
+        const handleClick = () => toggleAccordion(content, btn, btnTxt);
+
+        btn?.removeEventListener("click", handleClick);
+      });
+    };
+  }, []);
+
   return (
     <div className="contents-sidebar">
       <h2 className="contents-sidebar__headline">
@@ -11,23 +73,7 @@ const Sidebar = () => {
       <div className="contents-sidebar__inner">
         <div className="contents-search pc">
           <div className="contents-search__inner">
-            <form className="search-form" action="#">
-              <div className="search-form__inner">
-                <input
-                  type="text"
-                  className="input-text"
-                  placeholder="キーワードから探す"
-                />
-                <button type="submit" className="btn-submit">
-                  <Image
-                    src="/images/ico_search.svg"
-                    width={19}
-                    height={20}
-                    alt="SEARCH"
-                  />
-                </button>
-              </div>
-            </form>
+            <InputSearch />
           </div>
           <div className="search-keywords">
             <h3 className="search-keywords__ttl">よく検索されるワード</h3>

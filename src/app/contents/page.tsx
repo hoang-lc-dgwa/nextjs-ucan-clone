@@ -3,6 +3,11 @@ import Sidebar from "@/app/ui/sidebar";
 import Image from "next/image";
 import Link from "next/link";
 import SubHeader, { SubHeader2 } from "@/app/ui/sub-header";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "CONTENTS",
+};
 
 export default function Page() {
   return (

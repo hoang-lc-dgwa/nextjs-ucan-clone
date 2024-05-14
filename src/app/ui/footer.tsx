@@ -1,22 +1,12 @@
 import Image from "next/image";
 import React from "react";
+import Entry from "@/app/ui/entry";
 
 const Footer = () => {
   return (
     <>
-      <div className="footer-entry">
-        <div className="inner">
-          <div className="footer-entry__btn">
-            <a
-              href="https://job.mynavi.jp/25/pc/search/corp72921/outline.html"
-              target="_blank"
-              className="c-btn is-reverse"
-            >
-              <span>ENTRY</span>
-            </a>
-          </div>
-        </div>
-      </div>
+      <Entry />
+
       <footer className="footer">
         <div className="inner">
           <div className="footer-logo">

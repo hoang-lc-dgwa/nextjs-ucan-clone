@@ -1,6 +1,11 @@
 import Sidebar from "@/app/ui/sidebar";
 import Image from "next/image";
 import React from "react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "CONTETS DETAIL",
+};
 
 export default function Page() {
   return (

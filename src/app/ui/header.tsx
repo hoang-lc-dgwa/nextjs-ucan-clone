@@ -1,8 +1,40 @@
+"use client";
+
+import React, { FC, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import NavLinks from "@/app/ui/nav-links";
+import InputSearch from "@/app/ui/input-search";
+import Button from "@/app/ui/buttons";
 
-const Header = () => {
+const Header: FC = () => {
+  useEffect(() => {
+    const headerHbg = document.querySelector(".header-hbg");
+    const header = document.querySelector(".header");
+    const logoLink = document.querySelector(".header-logo-sp a");
+    const menuLinks = document.querySelectorAll(".header-nav__menu a");
+
+    const toggleMenu = () => {
+      header?.classList.toggle("is-open");
+      headerHbg?.classList.toggle("is-active");
+    };
+
+    const closeMenu = () => {
+      header?.classList.remove("is-open");
+      headerHbg?.classList.remove("is-active");
+    };
+
+    headerHbg?.addEventListener("click", toggleMenu);
+    logoLink?.addEventListener("click", closeMenu);
+    menuLinks.forEach((link) => link.addEventListener("click", closeMenu));
+
+    return () => {
+      headerHbg?.removeEventListener("click", toggleMenu);
+      logoLink?.removeEventListener("click", closeMenu);
+      menuLinks.forEach((link) => link.removeEventListener("click", closeMenu));
+    };
+  }, []);
+
   return (
     <>
       <header className="header">
@@ -29,23 +61,7 @@ const Header = () => {
               </div>
               <div className="header-search">
                 <div className="header-search__inner">
-                  <form className="search-form" action="#">
-                    <div className="search-form__inner">
-                      <input
-                        type="text"
-                        className="input-text"
-                        placeholder="キーワードから探す"
-                      />
-                      <button type="submit" className="btn-submit">
-                        <Image
-                          src="/images/ico_search.svg"
-                          width={19}
-                          height={20}
-                          alt="SEARCH"
-                        />
-                      </button>
-                    </div>
-                  </form>
+                  <InputSearch />
                   <div className="search-keywords sp">
                     <h3 className="search-keywords__ttl">
                       よく検索されるワード
@@ -77,42 +93,10 @@ const Header = () => {
                 </div>
               </div>
               <div className="header-nav">
-                <nav className="header-nav__menu">
-                  <ul>
-                    <li>
-                      <Link href="/business/">
-                        <span className="txt-en">BUSINESS</span>
-                        <span className="txt-ja">事業内容</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/work/">
-                        <span className="txt-en">WORK</span>
-                        <span className="txt-ja">仕事内容</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/contents/">
-                        <span className="txt-en">CONTENTS</span>
-                        <span className="txt-ja">記事一覧</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/recruit/">
-                        <span className="txt-en">RECRUIT</span>
-                        <span className="txt-ja">募集要項</span>
-                      </Link>
-                    </li>
-                  </ul>
-                </nav>
+                <NavLinks />
+
                 <div className="header-nav__btn">
-                  <a
-                    href="https://job.mynavi.jp/25/pc/search/corp72921/outline.html"
-                    target="_blank"
-                    className="c-btn"
-                  >
-                    <span>ENTRY</span>
-                  </a>
+                  <Button />
                 </div>
               </div>
               <div className="header-links sp">
