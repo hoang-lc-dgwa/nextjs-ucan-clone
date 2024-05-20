@@ -21,7 +21,7 @@ export default function Page() {
               <div className="contents-list">
                 <div className="contents-column">
                   <Link
-                    href="/contents/detail/"
+                    href="/contents/detail/001"
                     className="contents-column__inner"
                   >
                     <div className="contents-column__img">
@@ -56,7 +56,7 @@ export default function Page() {
                 </div>
                 <div className="contents-column">
                   <Link
-                    href="/contents/detail/"
+                    href="/contents/detail/002"
                     className="contents-column__inner"
                   >
                     <div className="contents-column__img">
@@ -88,7 +88,7 @@ export default function Page() {
                 </div>
                 <div className="contents-column">
                   <Link
-                    href="/contents/detail/"
+                    href="/contents/detail/003"
                     className="contents-column__inner"
                   >
                     <div className="contents-column__img">
@@ -120,7 +120,7 @@ export default function Page() {
                 </div>
                 <div className="contents-column">
                   <Link
-                    href="/contents/detail/"
+                    href="/contents/detail/004"
                     className="contents-column__inner"
                   >
                     <div className="contents-column__img">
@@ -155,7 +155,7 @@ export default function Page() {
                 </div>
                 <div className="contents-column">
                   <Link
-                    href="/contents/detail/"
+                    href="/contents/detail/005"
                     className="contents-column__inner"
                   >
                     <div className="contents-column__img">
@@ -187,7 +187,7 @@ export default function Page() {
                 </div>
                 <div className="contents-column">
                   <Link
-                    href="/contents/detail/"
+                    href="/contents/detail/006"
                     className="contents-column__inner"
                   >
                     <div className="contents-column__img">
@@ -219,7 +219,7 @@ export default function Page() {
                 </div>
                 <div className="contents-column">
                   <Link
-                    href="/contents/detail/"
+                    href="/contents/detail/007"
                     className="contents-column__inner"
                   >
                     <div className="contents-column__img">
@@ -254,7 +254,7 @@ export default function Page() {
                 </div>
                 <div className="contents-column">
                   <Link
-                    href="/contents/detail/"
+                    href="/contents/detail/008"
                     className="contents-column__inner"
                   >
                     <div className="contents-column__img">
@@ -286,7 +286,7 @@ export default function Page() {
                 </div>
                 <div className="contents-column">
                   <Link
-                    href="/contents/detail/"
+                    href="/contents/detail/009"
                     className="contents-column__inner"
                   >
                     <div className="contents-column__img">
@@ -318,7 +318,7 @@ export default function Page() {
                 </div>
                 <div className="contents-column">
                   <Link
-                    href="/contents/detail/"
+                    href="/contents/detail/010"
                     className="contents-column__inner"
                   >
                     <div className="contents-column__img">

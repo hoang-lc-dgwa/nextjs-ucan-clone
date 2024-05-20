@@ -1,12 +1,17 @@
+"use client";
+
 import Image from "next/image";
-import React from "react";
+import React, { FC } from "react";
 import { Metadata } from "next";
+import { useParams } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: "CONTETS DETAIL",
-};
+// export const metadata: Metadata = {
+//   title: "CONTETS DETAIL",
+// };
 
-export default function Page() {
+const BlogPage: FC = () => {
+  const { id } = useParams<{ id: string }>();
+
   return (
     <>
       <ul className="contents-column__tags">
@@ -25,7 +30,7 @@ export default function Page() {
       </ul>
       <article className="contents-detail">
         <h1>
-          好評につき再び密着！若手社員の1日のスケジュールを追いかけてみた。
+          {id} 好評につき再び密着！若手社員の1日のスケジュールを追いかけてみた。
         </h1>
         <aside className="contents-editor">
           <h5 className="contents-editor__title">
@@ -50,10 +55,6 @@ export default function Page() {
             <br />
             2022年新卒入社。教育事業部顧客戦略部所属。インターンで広告をつくる面白さを体験し、ユーキャンに興味を持つ。その際、どんな意見も前向きにとらえてくれる社風に惹かれて入社を決意した。
           </p>
-          {/* for https://feel.u-can.jp/article90/ */}
-          {/* <p><strong>酒井（Sakai）</strong><br />2020年入社。教育事業部webマーケティング部所属。</p>
-                                <p><strong>田邉（Tanabe）</strong><br />2021年入社。通信販売事業部webマーケティング部所属。</p>
-                                <p><strong>山岸（Yamagishi）</strong><br />2022年入社。通信販売事業部文化教養事業データマーケティング部所属。</p> */}
         </blockquote>
         <h2>
           常に自分から率先してやるという意識を忘れない若手社員のとある1日。
@@ -311,4 +312,6 @@ export default function Page() {
       </div>
     </>
   );
-}
+};
+
+export default BlogPage;

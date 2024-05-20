@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import React from "react";
+import React, { FC } from "react";
 
 interface SubHeaderProps {
   h1Text: string;
@@ -7,7 +7,7 @@ interface SubHeaderProps {
   fontJa?: boolean;
 }
 
-const SubHeader: React.FC<SubHeaderProps> = ({ h1Text, pText }) => {
+const SubHeader: FC<SubHeaderProps> = ({ h1Text, pText }) => {
   return (
     <div className="sub-header">
       <div className="inner">
@@ -26,7 +26,7 @@ const SubHeader: React.FC<SubHeaderProps> = ({ h1Text, pText }) => {
 
 export default SubHeader;
 
-export const SubHeader2: React.FC<SubHeaderProps> = ({
+export const SubHeader2: FC<SubHeaderProps> = ({
   h1Text,
   pText,
   fontJa = false,
