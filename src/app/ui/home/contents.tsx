@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect } from "react";
 import Sidebar from "@/app/ui/sidebar";
-import { v4 as uuidv4 } from "uuid";
 
 function initializeTabs() {
   const tabs = document.querySelectorAll(".contents-tabs__nav li");
@@ -31,8 +30,6 @@ function initializeTabs() {
 }
 
 const Contents = () => {
-  const ids = Array.from({ length: 6 }, () => uuidv4());
-
   useEffect(() => {
     initializeTabs();
   }, []);
@@ -56,7 +53,7 @@ const Contents = () => {
                 <div className="contents-list">
                   <div className="contents-column">
                     <Link
-                      href={`/contents/detail/${ids}`}
+                      href={`/contents/detail/001`}
                       className="contents-column__inner"
                     >
                       <div className="contents-column__img">
