@@ -4180,6 +4180,10 @@ img {
   width: 100%;
 }
 
+.search-form .input-text:focus {
+  outline: 1px solid #999;
+}
+
 .search-form .input-text::-webkit-input-placeholder {
   color: #d9d9d9;
   opacity: 1;

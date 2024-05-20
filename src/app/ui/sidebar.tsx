@@ -3,16 +3,88 @@
 import React, { FC, useEffect, useRef } from "react";
 import InputSearch from "@/app/ui/input-search";
 
+interface Tags {
+  [category: string]: string[];
+}
+
+const keywords: string[] = [
+  "マーケティング",
+  "EdTech",
+  "新規事業",
+  "福利厚生",
+  "OJT制度",
+  "研修",
+  "働き方",
+];
+
+const tags: Tags = {
+  挑戦のリアル: [
+    "マーケティング",
+    "教育事業部",
+    "管理部門",
+    "通信販売事業部",
+    "ココチモ事業部",
+    "開発",
+    "学び出版部",
+    "講座指導部",
+    "人事",
+    "EdTech（エドテック）",
+    "DM",
+    "カタログ",
+    "アパレル",
+    "クリエイティブ",
+    "お客様サービスセンター",
+    "生活雑貨",
+    "ウェブ",
+    "通信教育",
+    "生活雑貨",
+    "ユーキャングループ",
+    "インタビュー",
+  ],
+  働く環境: [
+    "オフィス紹介",
+    "働くパパ",
+    "働くママ",
+    "働き方",
+    "時短勤務",
+    "制度",
+    "文化",
+    "日常",
+    "趣味",
+    "部活紹介",
+  ],
+  キャリア: ["OJT", "キャリア", "ジョブチェンジ", "新人研修"],
+  採用情報: [
+    "求める人物像",
+    "内定者",
+    "入社式",
+    "説明会",
+    "就活おすすめ情報",
+    "1day仕事体験",
+  ],
+  特集記事: [
+    "トップメッセージ",
+    "座談会",
+    "お知らせ",
+    "趣味",
+    "部活紹介",
+    "対談",
+    "歴史",
+    "社長",
+    "若手",
+    "同期",
+  ],
+};
+
 const Sidebar: FC = () => {
-  const accordionsRef = useRef<NodeListOf<Element> | null>(null);
+  const sidebarRef = useRef<HTMLElement | null>(null);
 
   const toggleAccordion = (
     content: HTMLElement,
     btn: HTMLElement,
     btnTxt: HTMLElement
   ) => {
-    const isOpen = content.style.maxHeight !== "39rem";
-    console.log("click1");
+    const isOpen = content.classList.contains("is-open");
     if (!isOpen) {
       content.style.maxHeight = `${content.scrollHeight}px`;
       content.classList.add("is-open");
@@ -27,40 +99,21 @@ const Sidebar: FC = () => {
   };
 
   useEffect(() => {
-    const accordions = document.querySelectorAll(".contents-sidebar");
-    accordionsRef.current = accordions;
+    const sidebar = document.querySelector(".contents-sidebar") as HTMLElement;
+    sidebarRef.current = sidebar;
 
-    accordions.forEach((accordion) => {
-      const btn = accordion.querySelector(".keyword-more") as HTMLElement;
-      const btnTxt = accordion.querySelector(
-        ".keyword-more__txt"
-      ) as HTMLElement;
-      const content = accordion.querySelector(
-        ".contents-sidebar__inner"
-      ) as HTMLElement;
+    const btn = sidebar.querySelector(".keyword-more") as HTMLElement;
+    const btnTxt = sidebar.querySelector(".keyword-more__txt") as HTMLElement;
+    const content = sidebar.querySelector(
+      ".contents-sidebar__inner"
+    ) as HTMLElement;
 
-      const handleClick = () => toggleAccordion(content, btn, btnTxt);
+    const handleClick = () => toggleAccordion(content, btn, btnTxt);
 
-      btn?.addEventListener("click", handleClick);
-
-      return () => {
-        btn?.removeEventListener("click", handleClick);
-      };
-    });
+    btn?.addEventListener("click", handleClick);
 
     return () => {
-      accordionsRef.current?.forEach((accordion) => {
-        const btn = accordion.querySelector(".keyword-more") as HTMLElement;
-        const btnTxt = accordion.querySelector(
-          ".keyword-more__txt"
-        ) as HTMLElement;
-        const content = accordion.querySelector(
-          ".contents-sidebar__inner"
-        ) as HTMLElement;
-        const handleClick = () => toggleAccordion(content, btn, btnTxt);
-
-        btn?.removeEventListener("click", handleClick);
-      });
+      btn?.removeEventListener("click", handleClick);
     };
   }, []);
 
@@ -78,209 +131,27 @@ const Sidebar: FC = () => {
           <div className="search-keywords">
             <h3 className="search-keywords__ttl">よく検索されるワード</h3>
             <ul className="search-keywords__list">
-              <li>
-                <a href="#">マーケティング</a>
-              </li>
-              <li>
-                <a href="#">EdTech</a>
-              </li>
-              <li>
-                <a href="#">新規事業</a>
-              </li>
-              <li>
-                <a href="#">福利厚生</a>
-              </li>
-              <li>
-                <a href="#">OJT制度</a>
-              </li>
-              <li>
-                <a href="#">研修</a>
-              </li>
-              <li>
-                <a href="#">働き方</a>
-              </li>
+              {keywords.map((item, index) => (
+                <li key={index}>
+                  <a href="#">{item}</a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
         <div className="contents-tags">
-          <div className="contents-tags__item">
-            <h3 className="contents-tags__headline">挑戦のリアル</h3>
-            <ul className="contents-tags__list">
-              <li>
-                <a href="#">マーケティング</a>
-              </li>
-              <li>
-                <a href="#">教育事業部</a>
-              </li>
-              <li>
-                <a href="#">管理部門</a>
-              </li>
-              <li>
-                <a href="#">通信販売事業部</a>
-              </li>
-              <li>
-                <a href="#">ココチモ事業部</a>
-              </li>
-              <li>
-                <a href="#">開発</a>
-              </li>
-              <li>
-                <a href="#">学び出版部</a>
-              </li>
-              <li>
-                <a href="#">講座指導部</a>
-              </li>
-              <li>
-                <a href="#">人事</a>
-              </li>
-              <li>
-                <a href="#">EdTech（エドテック）</a>
-              </li>
-              <li>
-                <a href="#">DM</a>
-              </li>
-              <li>
-                <a href="#">カタログ</a>
-              </li>
-              <li>
-                <a href="#">アパレル</a>
-              </li>
-              <li>
-                <a href="#">クリエイティブ</a>
-              </li>
-              <li>
-                <a href="#">お客様サービスセンター </a>
-              </li>
-              <li>
-                <a href="#">生活雑貨</a>
-              </li>
-              <li>
-                <a href="#">ウェブ</a>
-              </li>
-              <li>
-                <a href="#">通信教育</a>
-              </li>
-              <li>
-                <a href="#">生活雑貨</a>
-              </li>
-              <li>
-                <a href="#">ユーキャングループ</a>
-              </li>
-              <li>
-                <a href="#">インタビュー</a>
-              </li>
-            </ul>
-          </div>
-          <div className="contents-tags__item">
-            <h3 className="contents-tags__headline">働く環境</h3>
-            <ul className="contents-tags__list">
-              <li>
-                <a href="#">オフィス紹介</a>
-              </li>
-              <li>
-                <a href="#">働くパパ</a>
-              </li>
-              <li>
-                <a href="#">働くママ</a>
-              </li>
-              <li>
-                <a href="#">働き方 </a>
-              </li>
-              <li>
-                <a href="#">時短勤務</a>
-              </li>
-              <li>
-                <a href="#">制度</a>
-              </li>
-              <li>
-                <a href="#">文化</a>
-              </li>
-              <li>
-                <a href="#">日常</a>
-              </li>
-              <li>
-                <a href="#">趣味</a>
-              </li>
-              <li>
-                <a href="#">部活紹介</a>
-              </li>
-            </ul>
-          </div>
-          <div className="contents-tags__item">
-            <h3 className="contents-tags__headline">キャリア</h3>
-            <ul className="contents-tags__list">
-              <li>
-                <a href="#">OJT</a>
-              </li>
-              <li>
-                <a href="#">キャリア</a>
-              </li>
-              <li>
-                <a href="#">ジョブチェンジ</a>
-              </li>
-              <li>
-                <a href="#">新人研修</a>
-              </li>
-            </ul>
-          </div>
-          <div className="contents-tags__item">
-            <h3 className="contents-tags__headline">採用情報</h3>
-            <ul className="contents-tags__list">
-              <li>
-                <a href="#">求める人物像</a>
-              </li>
-              <li>
-                <a href="#">内定者</a>
-              </li>
-              <li>
-                <a href="#">入社式</a>
-              </li>
-              <li>
-                <a href="#">説明会</a>
-              </li>
-              <li>
-                <a href="#">就活おすすめ情報</a>
-              </li>
-              <li>
-                <a href="#">1day仕事体験</a>
-              </li>
-            </ul>
-          </div>
-          <div className="contents-tags__item">
-            <h3 className="contents-tags__headline">特集記事</h3>
-            <ul className="contents-tags__list">
-              <li>
-                <a href="#">トップメッセージ</a>
-              </li>
-              <li>
-                <a href="#">座談会</a>
-              </li>
-              <li>
-                <a href="#">お知らせ</a>
-              </li>
-              <li>
-                <a href="#">趣味</a>
-              </li>
-              <li>
-                <a href="#">部活紹介</a>
-              </li>
-              <li>
-                <a href="#">対談</a>
-              </li>
-              <li>
-                <a href="#">歴史</a>
-              </li>
-              <li>
-                <a href="#">社長</a>
-              </li>
-              <li>
-                <a href="#">若手 </a>
-              </li>
-              <li>
-                <a href="#">同期</a>
-              </li>
-            </ul>
-          </div>
+          {Object.entries(tags).map(([tagCategory, tagList], i) => (
+            <div key={i} className="contents-tags__item">
+              <h3 className="contents-tags__headline">{tagCategory}</h3>
+              <ul className="contents-tags__list">
+                {tagList.map((tag, tagIndex) => (
+                  <li key={tagIndex}>
+                    <a href="#">{tag}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
       <div className="keyword-more sp">

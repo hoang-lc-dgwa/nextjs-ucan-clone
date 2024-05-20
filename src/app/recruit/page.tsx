@@ -1,6 +1,6 @@
 import React from "react";
 import SubHeader from "@/app/ui/sub-header";
-import RecruitInfo from "@/app/ui/recruit-info";
+import RecruitInfo from "@/app/ui/recruit/info";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

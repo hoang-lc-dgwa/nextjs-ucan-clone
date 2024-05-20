@@ -2,7 +2,7 @@ import React from "react";
 import Sidebar from "@/app/ui/sidebar";
 import Image from "next/image";
 import Link from "next/link";
-import SubHeader, { SubHeader2 } from "@/app/ui/sub-header";
+import { SubHeader2 } from "@/app/ui/sub-header";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,8 +12,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <SubHeader h1Text="CONTENTS" pText="記事一覧" />
-      <SubHeader2 h1Text="教育事業" pText="の記事一覧" />
+      <SubHeader2 h1Text="CONTENTS" pText="記事一覧" />
 
       <div className="contents-main">
         <div className="inner">

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import SubHeader from "@/app/ui/sub-header";
-import BusinessInfo from "@/app/ui/business-info";
+import BusinessInfo from "@/app/ui/business/info";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

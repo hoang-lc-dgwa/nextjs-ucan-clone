@@ -1,8 +1,10 @@
+import clsx from "clsx";
 import React from "react";
 
 interface SubHeaderProps {
   h1Text: string;
   pText: string;
+  fontJa?: boolean;
 }
 
 const SubHeader: React.FC<SubHeaderProps> = ({ h1Text, pText }) => {
@@ -24,12 +26,20 @@ const SubHeader: React.FC<SubHeaderProps> = ({ h1Text, pText }) => {
 
 export default SubHeader;
 
-export const SubHeader2: React.FC<SubHeaderProps> = ({ h1Text, pText }) => {
+export const SubHeader2: React.FC<SubHeaderProps> = ({
+  h1Text,
+  pText,
+  fontJa = false,
+}) => {
   return (
     <div className="contents-header">
       <div className="inner">
         <div className="contents-header__inner">
-          <h1 className="contents-header__headline u-font-ja">
+          <h1
+            className={clsx("contents-header__headline", {
+              "u-font-ja": fontJa,
+            })}
+          >
             <span className="js-anm-mask_">{h1Text}</span>
           </h1>
           <p className="contents-header__lead">
