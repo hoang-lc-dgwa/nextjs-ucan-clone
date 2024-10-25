@@ -1,8 +1,7 @@
-import React from "react";
-import SubHeader from "@/app/ui/sub-header";
-import WorkList from "@/app/ui/work/anchor";
-import WorkInfoList from "@/app/ui/work/info";
 import { Metadata } from "next";
+import SubHeader from "@/components/SubHeader";
+import WorkList from "@/components/work/Anchor";
+import WorkInfoList from "@/components/work/Info";
 
 export const metadata: Metadata = {
   title: "WORK",

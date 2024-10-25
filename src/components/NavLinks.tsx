@@ -1,5 +1,4 @@
 import Link from "next/link";
-import React from "react";
 
 const links = [
   {
@@ -24,7 +23,7 @@ const links = [
   },
 ];
 
-const NavLinks = () => {
+export default function NavLinks() {
   return (
     <>
       <nav className="header-nav__menu">
@@ -43,6 +42,4 @@ const NavLinks = () => {
       </nav>
     </>
   );
-};
-
-export default NavLinks;
+}

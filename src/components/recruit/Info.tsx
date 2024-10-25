@@ -1,5 +1,3 @@
-import React, { FC } from "react";
-
 interface Position {
   title: string;
   content: string;
@@ -48,7 +46,7 @@ const positions: Position[] = [
   },
 ];
 
-const RecruitInfo: FC = () => {
+export default function RecruitInfo() {
   return (
     <div className="recruit-info">
       <div className="recruit-info__inner">
@@ -61,6 +59,4 @@ const RecruitInfo: FC = () => {
       </div>
     </div>
   );
-};
-
-export default RecruitInfo;
+}

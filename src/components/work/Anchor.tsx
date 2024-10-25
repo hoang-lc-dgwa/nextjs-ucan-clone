@@ -1,5 +1,3 @@
-import React, { FC } from "react";
-
 interface Work {
   number: string;
   copy: string;
@@ -29,7 +27,7 @@ const works: Work[] = [
   },
 ];
 
-const WorkList: FC = () => {
+export default function WorkList() {
   return (
     <ul className="work-list">
       {works.map((work, index) => (
@@ -49,6 +47,4 @@ const WorkList: FC = () => {
       ))}
     </ul>
   );
-};
-
-export default WorkList;
+}

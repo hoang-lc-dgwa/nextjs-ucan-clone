@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import React, { FC } from "react";
 import { Metadata } from "next";
 import { useParams } from "next/navigation";
 
@@ -9,7 +8,7 @@ import { useParams } from "next/navigation";
 //   title: "CONTETS DETAIL",
 // };
 
-const BlogPage: FC = () => {
+export default function BlogPage() {
   const { id } = useParams<{ id: string }>();
 
   return (
@@ -312,6 +311,4 @@ const BlogPage: FC = () => {
       </div>
     </>
   );
-};
-
-export default BlogPage;
+}

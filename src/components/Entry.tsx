@@ -1,7 +1,6 @@
-import React from "react";
-import Button from "@/app/ui/buttons";
+import Button from "@/components/Buttons";
 
-const Entry = () => {
+export default function Entry() {
   return (
     <div className="footer-entry">
       <div className="inner">
@@ -11,6 +10,4 @@ const Entry = () => {
       </div>
     </div>
   );
-};
-
-export default Entry;
+}

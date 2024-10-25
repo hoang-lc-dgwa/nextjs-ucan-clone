@@ -1,4 +1,3 @@
-import React, { FC } from "react";
 import Image from "next/image";
 
 interface Business {
@@ -64,7 +63,7 @@ const business: Business[] = [
   },
 ];
 
-const BusinessInfo = () => {
+export default function BusinessInfo() {
   return (
     <div className="business-info__list">
       {business.map((item, index) => (
@@ -118,6 +117,4 @@ const BusinessInfo = () => {
       ))}
     </div>
   );
-};
-
-export default BusinessInfo;
+}

@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
-import { notoSans, roboto, raleway } from "@/app/ui/fonts";
-import Loading from "@/app/ui/loading";
-// import "@/app/ui/globals.css";
-import "../../public/css/style.css";
-import clsx from "clsx";
-import Header from "@/app/ui/header";
-import Footer from "@/app/ui/footer";
-import Script from "next/script";
+import { notoSans, roboto, raleway } from "@/lib/fonts";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { Providers } from "@/components/Providers";
+import "/public/css/style.css";
+import Loading from "@/components/Loading";
 
 export const metadata: Metadata = {
   title: {
@@ -28,12 +26,14 @@ export default function RootLayout({
       <body
         className={`${notoSans.variable} ${roboto.variable} ${raleway.variable}`}
       >
-        <div id="wrapper">
-          <Header />
-          <main className="page-main">{children}</main>
-          <Footer />
-        </div>
-        {/* <Loading /> */}
+        <Providers>
+          <div id="wrapper">
+            <Header />
+            <main className="page-main">{children}</main>
+            <Footer />
+          </div>
+          {/* <Loading /> */}
+        </Providers>
       </body>
     </html>
   );

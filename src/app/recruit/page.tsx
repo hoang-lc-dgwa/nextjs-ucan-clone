@@ -1,7 +1,6 @@
-import React from "react";
-import SubHeader from "@/app/ui/sub-header";
-import RecruitInfo from "@/app/ui/recruit/info";
 import { Metadata } from "next";
+import RecruitInfo from "@/components/recruit/Info";
+import SubHeader from "@/components/SubHeader";
 
 export const metadata: Metadata = {
   title: "RECRUIT",

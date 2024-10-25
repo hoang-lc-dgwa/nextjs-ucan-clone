@@ -1,6 +1,6 @@
-import About from "@/app/ui/home/about";
-import Kv from "@/app/ui/home/kv";
-import Contents from "@/app/ui/home/contents";
+import About from "@/components/home/About";
+import Kv from "@/components/home/Kv";
+import Contents from "@/components/home/Contents";
 
 export default function Home() {
   return (

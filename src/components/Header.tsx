@@ -1,13 +1,13 @@
 "use client";
 
-import React, { FC, useEffect } from "react";
+import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import NavLinks from "@/app/ui/nav-links";
-import InputSearch from "@/app/ui/input-search";
-import Button from "@/app/ui/buttons";
+import Button from "@/components/Buttons";
+import InputSearch from "@/components/InputSearch";
+import NavLinks from "@/components/NavLinks";
 
-const Header: FC = () => {
+export default function Header() {
   useEffect(() => {
     const headerHbg = document.querySelector(".header-hbg");
     const header = document.querySelector(".header");
@@ -122,6 +122,4 @@ const Header: FC = () => {
       </header>
     </>
   );
-};
-
-export default Header;
+}

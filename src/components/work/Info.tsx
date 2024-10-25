@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import WorkFlowList from "./flow";
 
 interface Info {
@@ -103,7 +103,7 @@ const insertBr = (text: string) => {
   ));
 };
 
-const WorkInfoList: FC = () => {
+export default function WorkInfoList() {
   return (
     <>
       {info.map((item, index) => (
@@ -139,6 +139,4 @@ const WorkInfoList: FC = () => {
       ))}
     </>
   );
-};
-
-export default WorkInfoList;
+}

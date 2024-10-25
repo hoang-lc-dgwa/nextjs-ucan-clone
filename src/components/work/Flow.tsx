@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 
 interface Flow {
   title: string;
@@ -56,7 +56,7 @@ const insertBr = (text: string) => {
   ));
 };
 
-const WorkFlowList: FC = () => {
+export default function () {
   return (
     <div className="work-info-flow">
       <h4 className="work-info-flow__title">{flow.title}</h4>
@@ -76,6 +76,4 @@ const WorkFlowList: FC = () => {
       <div className="work-info-flow__fot">{flow.fot}</div>
     </div>
   );
-};
-
-export default WorkFlowList;
+}

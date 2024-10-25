@@ -1,6 +1,4 @@
-import React from "react";
-
-const About = () => {
+export default function About() {
   return (
     <div className="t-about">
       <div className="t-about__bg">
@@ -44,6 +42,4 @@ const About = () => {
       </div>
     </div>
   );
-};
-
-export default About;
+}

@@ -1,7 +1,7 @@
 "use client";
 
-import React, { FC, useEffect, useRef } from "react";
-import InputSearch from "@/app/ui/input-search";
+import { useEffect, useRef } from "react";
+import InputSearch from "@/components/InputSearch";
 
 interface Tags {
   [category: string]: string[];
@@ -76,7 +76,7 @@ const tags: Tags = {
   ],
 };
 
-const Sidebar: FC = () => {
+export default function Sidebar() {
   const sidebarRef = useRef<HTMLElement | null>(null);
 
   const toggleAccordion = (
@@ -159,6 +159,4 @@ const Sidebar: FC = () => {
       </div>
     </div>
   );
-};
-
-export default Sidebar;
+}

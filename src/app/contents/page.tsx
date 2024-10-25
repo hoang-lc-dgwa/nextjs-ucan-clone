@@ -1,9 +1,12 @@
 import React from "react";
-import Sidebar from "@/app/ui/sidebar";
+import Sidebar from "@/components/Sidebar";
 import Image from "next/image";
 import Link from "next/link";
-import { SubHeader2 } from "@/app/ui/sub-header";
 import { Metadata } from "next";
+import thumbnailColumn1 from "@/images/contents/column01_img.jpg";
+import thumbnailColumn2 from "@/images/contents/column02_img.jpg";
+import thumbnailColumn3 from "@/images/contents/column03_img.jpg";
+import { SubHeader2 } from "@/components/SubHeader";
 
 export const metadata: Metadata = {
   title: "CONTENTS",
@@ -26,9 +29,7 @@ export default function Page() {
                   >
                     <div className="contents-column__img">
                       <Image
-                        src="/images/contents/column01_img.jpg"
-                        width={350}
-                        height={234}
+                        src={thumbnailColumn1}
                         alt=""
                         className="img-fit"
                       />
@@ -61,9 +62,7 @@ export default function Page() {
                   >
                     <div className="contents-column__img">
                       <Image
-                        src="/images/contents/column02_img.jpg"
-                        width={350}
-                        height={234}
+                        src={thumbnailColumn2}
                         alt=""
                         className="img-fit"
                       />
@@ -93,9 +92,7 @@ export default function Page() {
                   >
                     <div className="contents-column__img">
                       <Image
-                        src="/images/contents/column03_img.jpg"
-                        width={350}
-                        height={234}
+                        src={thumbnailColumn3}
                         alt=""
                         className="img-fit"
                       />
@@ -125,9 +122,7 @@ export default function Page() {
                   >
                     <div className="contents-column__img">
                       <Image
-                        src="/images/contents/column01_img.jpg"
-                        width={350}
-                        height={234}
+                        src={thumbnailColumn1}
                         alt=""
                         className="img-fit"
                       />
@@ -160,9 +155,7 @@ export default function Page() {
                   >
                     <div className="contents-column__img">
                       <Image
-                        src="/images/contents/column02_img.jpg"
-                        width={350}
-                        height={234}
+                        src={thumbnailColumn2}
                         alt=""
                         className="img-fit"
                       />
@@ -192,9 +185,7 @@ export default function Page() {
                   >
                     <div className="contents-column__img">
                       <Image
-                        src="/images/contents/column03_img.jpg"
-                        width={350}
-                        height={234}
+                        src={thumbnailColumn3}
                         alt=""
                         className="img-fit"
                       />
@@ -224,9 +215,7 @@ export default function Page() {
                   >
                     <div className="contents-column__img">
                       <Image
-                        src="/images/contents/column01_img.jpg"
-                        width={350}
-                        height={234}
+                        src={thumbnailColumn1}
                         alt=""
                         className="img-fit"
                       />
@@ -259,9 +248,7 @@ export default function Page() {
                   >
                     <div className="contents-column__img">
                       <Image
-                        src="/images/contents/column02_img.jpg"
-                        width={350}
-                        height={234}
+                        src={thumbnailColumn2}
                         alt=""
                         className="img-fit"
                       />
@@ -291,9 +278,7 @@ export default function Page() {
                   >
                     <div className="contents-column__img">
                       <Image
-                        src="/images/contents/column03_img.jpg"
-                        width={350}
-                        height={234}
+                        src={thumbnailColumn3}
                         alt=""
                         className="img-fit"
                       />
@@ -323,9 +308,7 @@ export default function Page() {
                   >
                     <div className="contents-column__img">
                       <Image
-                        src="/images/contents/column01_img.jpg"
-                        width={350}
-                        height={234}
+                        src={thumbnailColumn1}
                         alt=""
                         className="img-fit"
                       />

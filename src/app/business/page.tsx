@@ -1,8 +1,6 @@
-import Image from "next/image";
-import React from "react";
-import SubHeader from "@/app/ui/sub-header";
-import BusinessInfo from "@/app/ui/business/info";
 import { Metadata } from "next";
+import BusinessInfo from "@/components/business/Info";
+import SubHeader from "@/components/SubHeader";
 
 export const metadata: Metadata = {
   title: "BUSINESS",

@@ -1,10 +1,12 @@
 "use client";
 
-import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect } from "react";
-import Sidebar from "@/app/ui/sidebar";
+import thumbnailColumn1 from "@/images/contents/column01_img.jpg";
+import thumbnailColumn2 from "@/images/contents/column02_img.jpg";
+import thumbnailColumn3 from "@/images/contents/column03_img.jpg";
+import Sidebar from "@/components/Sidebar";
 
 function initializeTabs() {
   const tabs = document.querySelectorAll(".contents-tabs__nav li");
@@ -29,7 +31,7 @@ function initializeTabs() {
   }
 }
 
-const Contents = () => {
+export default function Contents() {
   useEffect(() => {
     initializeTabs();
   }, []);
@@ -58,10 +60,9 @@ const Contents = () => {
                     >
                       <div className="contents-column__img">
                         <Image
-                          src="/images/contents/column01_img.jpg"
-                          width={350}
-                          height={234}
+                          src={thumbnailColumn1}
                           alt=""
+                          placeholder="blur"
                           className="img-fit"
                         />
                       </div>
@@ -93,10 +94,9 @@ const Contents = () => {
                     >
                       <div className="contents-column__img">
                         <Image
-                          src="/images/contents/column02_img.jpg"
-                          width={350}
-                          height={234}
+                          src={thumbnailColumn2}
                           alt=""
+                          placeholder="blur"
                           className="img-fit"
                         />
                       </div>
@@ -125,10 +125,9 @@ const Contents = () => {
                     >
                       <div className="contents-column__img">
                         <Image
-                          src="/images/contents/column03_img.jpg"
-                          width={350}
-                          height={234}
+                          src={thumbnailColumn3}
                           alt=""
+                          placeholder="blur"
                           className="img-fit"
                         />
                       </div>
@@ -157,10 +156,9 @@ const Contents = () => {
                     >
                       <div className="contents-column__img">
                         <Image
-                          src="/images/contents/column01_img.jpg"
-                          width={350}
-                          height={234}
+                          src={thumbnailColumn1}
                           alt=""
+                          placeholder="blur"
                           className="img-fit"
                         />
                       </div>
@@ -192,10 +190,9 @@ const Contents = () => {
                     >
                       <div className="contents-column__img">
                         <Image
-                          src="/images/contents/column02_img.jpg"
-                          width={350}
-                          height={234}
+                          src={thumbnailColumn2}
                           alt=""
+                          placeholder="blur"
                           className="img-fit"
                         />
                       </div>
@@ -224,10 +221,9 @@ const Contents = () => {
                     >
                       <div className="contents-column__img">
                         <Image
-                          src="/images/contents/column03_img.jpg"
-                          width={350}
-                          height={234}
+                          src={thumbnailColumn3}
                           alt=""
+                          placeholder="blur"
                           className="img-fit"
                         />
                       </div>
@@ -265,10 +261,9 @@ const Contents = () => {
                     >
                       <div className="contents-column__img">
                         <Image
-                          src="/images/contents/column01_img.jpg"
-                          width={350}
-                          height={234}
+                          src={thumbnailColumn1}
                           alt=""
+                          placeholder="blur"
                           className="img-fit"
                         />
                       </div>
@@ -300,10 +295,9 @@ const Contents = () => {
                     >
                       <div className="contents-column__img">
                         <Image
-                          src="/images/contents/column01_img.jpg"
-                          width={350}
-                          height={234}
+                          src={thumbnailColumn1}
                           alt=""
+                          placeholder="blur"
                           className="img-fit"
                         />
                       </div>
@@ -335,10 +329,9 @@ const Contents = () => {
                     >
                       <div className="contents-column__img">
                         <Image
-                          src="/images/contents/column02_img.jpg"
-                          width={350}
-                          height={234}
+                          src={thumbnailColumn2}
                           alt=""
+                          placeholder="blur"
                           className="img-fit"
                         />
                       </div>
@@ -367,10 +360,9 @@ const Contents = () => {
                     >
                       <div className="contents-column__img">
                         <Image
-                          src="/images/contents/column03_img.jpg"
-                          width={350}
-                          height={234}
+                          src={thumbnailColumn3}
                           alt=""
+                          placeholder="blur"
                           className="img-fit"
                         />
                       </div>
@@ -399,10 +391,9 @@ const Contents = () => {
                     >
                       <div className="contents-column__img">
                         <Image
-                          src="/images/contents/column03_img.jpg"
-                          width={350}
-                          height={234}
+                          src={thumbnailColumn3}
                           alt=""
+                          placeholder="blur"
                           className="img-fit"
                         />
                       </div>
@@ -431,10 +422,9 @@ const Contents = () => {
                     >
                       <div className="contents-column__img">
                         <Image
-                          src="/images/contents/column01_img.jpg"
-                          width={350}
-                          height={234}
+                          src={thumbnailColumn1}
                           alt=""
+                          placeholder="blur"
                           className="img-fit"
                         />
                       </div>
@@ -466,10 +456,9 @@ const Contents = () => {
                     >
                       <div className="contents-column__img">
                         <Image
-                          src="/images/contents/column02_img.jpg"
-                          width={350}
-                          height={234}
+                          src={thumbnailColumn2}
                           alt=""
+                          placeholder="blur"
                           className="img-fit"
                         />
                       </div>
@@ -505,6 +494,4 @@ const Contents = () => {
       </div>
     </div>
   );
-};
-
-export default Contents;
+}

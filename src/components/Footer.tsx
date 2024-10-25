@@ -1,8 +1,8 @@
-import Image from "next/image";
-import React from "react";
-import Entry from "@/app/ui/entry";
+import Entry from "@/components/Entry";
+import PageTop from "@/components/PageTop";
+import ThemeSwitch from "@/components/ThemeSwitch";
 
-const Footer = () => {
+export default function Footer() {
   return (
     <>
       <Entry />
@@ -11,12 +11,7 @@ const Footer = () => {
         <div className="inner">
           <div className="footer-logo">
             <a href="https://www.u-can.co.jp/" target="_blank">
-              <Image
-                src="/images/logo_footer.svg"
-                width={83}
-                height={83}
-                alt="U-CAN"
-              />
+              <img src="/images/logo_footer.svg" alt="U-CAN" />
             </a>
           </div>
           <p className="footer-desciption">株式会社ユーキャン</p>
@@ -39,11 +34,10 @@ const Footer = () => {
           </nav>
         </div>
       </footer>
-      <p className="pagetop">
-        <img src="/images/ico_pagetop.svg" alt="TOP" />
-      </p>
+
+      <ThemeSwitch />
+
+      <PageTop />
     </>
   );
-};
-
-export default Footer;
+}
